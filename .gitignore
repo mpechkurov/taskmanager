@@ -45,3 +45,5 @@ buildNumber.properties
 .idea/misc.xml
 .idea/workspace.xml
 /.idea/compiler.xml
+.idea
+/.idea/
