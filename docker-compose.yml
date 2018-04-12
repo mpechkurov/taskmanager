@@ -1,14 +1,18 @@
 version: '3'
 services:
   db:
+    image: postgres
+    restart: always
     environment:
-      POSTGRES_PASSWORD: t4sk
-      POSTGRES_USER: task
-      POSTGRES_DB: tasks_dbt
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: taskmanager
   web:
     image: damianofds/web:latest
     ports:
       - "8080:8080"
+    links:
+      - db
     depends_on:
       - db
   scheduler:

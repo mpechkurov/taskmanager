@@ -74,13 +74,14 @@ If you don't use the dockerized environment (Options 1 and 2) you have to take c
 * Create the database as described in *Database configuration*
 * Run the classes ``EndpointsMain`` and ``SchedulerMain``. It can be done eclipse after having imported the project or directly from the command line.
 
-### [WIP3]OPTION 3 - run via dockercompose
-
-*The coolest option but it still doesn't work :(*
-
-In the repo root run ``#$ sudo docker-compose up``
-
-Open the browser at http://localhost:8080 and have fun!
+### OPTION 3 - run via docker-compose
+* Produce docker image for both profiles
+```
+#$ mvn clean install -Pweb,docker
+#$ mvn clean install -Pscheduler,docker
+``` 
+* In the repo root run ``#$ sudo docker-compose up``
+* Open the browser at http://localhost:8080 and have fun!
 
 ![preview](/doc/preview.jpg?raw=true)
 

@@ -84,7 +84,7 @@
 				    <plugin>
 					<groupId>com.spotify</groupId>
 					<artifactId>dockerfile-maven-plugin</artifactId>
-					<version>1.2.2</version>
+					<version>1.3.7</version>
 					<executions>
 					  <execution>
 					    <id>default</id>
@@ -95,7 +95,8 @@
 					  </execution>
 					</executions>
 		                        <configuration>
-		                          <repository>damianofds/web:latest</repository>
+									<pullNewerImage>false</pullNewerImage>
+		                          <repository>damianofds/web</repository>
 		                        </configuration>
 				     </plugin>
 			    </plugins>
