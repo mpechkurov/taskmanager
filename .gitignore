@@ -39,3 +39,9 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
+/.idea/.name
+/.idea/misc.xml
+.idea/.name
+.idea/misc.xml
+.idea/workspace.xml
+/.idea/compiler.xml
