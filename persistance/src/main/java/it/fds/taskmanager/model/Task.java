@@ -10,9 +10,10 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Task.findTaskToRestore", query = "SELECT t FROM Task t WHERE t.status = 'POSTPONED' and t.postponedat < NOW()"),
-	@NamedQuery(name = "Task.findAllExcludePostponed", query = "SELECT t FROM Task t WHERE t.status != 'POSTPONED'"),
-	@NamedQuery(name = "Task.getNumberOfTaskWithPriority", query = "SELECT count(t) FROM Task t WHERE t.priority = '3'")
+        @NamedQuery(name = "Task.findTaskToRestore", query = "SELECT t FROM Task t WHERE t.status = 'POSTPONED' and t.postponedat < NOW()"),
+        @NamedQuery(name = "Task.findAllExcludePostponed", query = "SELECT t FROM Task t WHERE t.status != 'POSTPONED'"),
+        @NamedQuery(name = "Task.getNumberOfTaskWithPriority", query = "SELECT count(t) FROM Task t WHERE t.priority = ?1"),
+        @NamedQuery(name = "Task.getNumberOfTaskWithStatus", query = "SELECT count(t) FROM Task t WHERE t.status = ?1")
 })
 public class Task {
 
@@ -28,7 +29,7 @@ public class Task {
 	String description;
 	String priority;
 	String status;
-	
+
 	public Task() {}
 
 	public UUID getUuid() {
@@ -115,5 +116,5 @@ public class Task {
 		this.postponedtime = postponedtime;
 	}
 
-	
+
 }

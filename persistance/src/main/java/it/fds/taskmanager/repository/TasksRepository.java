@@ -9,11 +9,13 @@ import it.fds.taskmanager.model.Task;
 
 public interface TasksRepository  extends JpaRepository<Task,Long> {
 
-	Task findByUuid(UUID uuid);
-	
-	List<Task> findTaskToRestore();
-	
-	List<Task> findAllExcludePostponed();
-	
-	Integer getNumberOfTaskWithPriority();
+    Task findByUuid(UUID uuid);
+
+    List<Task> findTaskToRestore();
+
+    List<Task> findAllExcludePostponed();
+
+    String getNumberOfTaskWithPriority(String priority);
+
+    String getNumberOfTaskWithStatus(String state);
 }

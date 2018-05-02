@@ -1,6 +1,5 @@
 package it.fds.taskmanager;
 
-import org.apache.commons.lang.NotImplementedException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,13 +15,13 @@ public class ReportServiceJPA implements ReportService{
     private TasksRepository tasksRepo;
     
     @Override
-    public int getNumberOfTaskWithStatus(TaskState state) {
-        throw new NotImplementedException("Dear candidate, implement me please!");
+    public String getNumberOfTaskWithStatus(String state) {
+        return tasksRepo.getNumberOfTaskWithStatus(state);
     }
 
     @Override
-    public int getNumberOfTasksWithPriority(int priority) {
-        return tasksRepo.getNumberOfTaskWithPriority();
+    public String getNumberOfTasksWithPriority(String priority) {
+        return tasksRepo.getNumberOfTaskWithPriority( priority);
     }
 
 }
